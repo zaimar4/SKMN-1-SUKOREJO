@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Kalkulator Bangun Ruang</title>
+</head>
+
+<body>
+    <nav data-aos="fade-up" data-aos-duration=""="0990">
+        <ul class="menu" >
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#card-pilih-tipe">Hitung</a></li>
+        </ul>
+    </nav>
+
+    <div id="hero" data-aos="fade-up" data-aos-duration="1500"  >
+      <h1 data-aos="fade-up" data-aos-duration="1000">Bangun Ruang & Bangun Datar <span data-aos="fade-up" data-aos-duration="1000">Kalkulator</span></h1>
+      <p data-aos="fade-up" data-aos-duration="1500">Hitung mudah di mana saja</p>
+    </div>
+   <div id="about">
+    <div id="card-about-1"  data-aos="zoom-in-up">
+      
+      <h4>Tujuan <i class="fa-solid fa-bullseye"></i></h4>
+      <p>Website ini dibuat untuk membantu pengguna menghitung bangun ruang dan bangun datar dengan mudah dan cepat tanpa perlu menghitung manual.</p>
+    </div>
+    <div id="card-about-2"  data-aos="zoom-in-up">
+   
+      <h4>Fitur Utama  <i class="fa-solid fa-gears"></i></h4>
+      <p>Dilengkapi kalkulator interaktif untuk menghitung volume, luas permukaan, dan sisi berbagai bangun. Hasil langsung tampil tanpa rumus manual.</p>
+    </div>
+      <div id="card-about-3" data-aos="zoom-in-up">
+      <h4>Teknologi  <i class="fa-solid fa-laptop-code"></i></h4>
+      <p>Dibangun menggunakan HTML, CSS, JavaScript, dan AOS Animation untuk tampilan yang menarik dan responsif di semua perangkat.</p>
+    </div>
+    <div id="card-about-4"  data-aos="zoom-in-up">
+      <h4>Tentang Pembuat <i class="fa-solid fa-user-graduate"></i></h4>
+      <p>Dikembangkan oleh <b>Zaim Arif</b>, siswa kelas X RPL 1, sebagai proyek pembelajaran dalam pengembangan website interaktif berbasis edukasi.</p>
+    </div>
+   </div>
+
+  <div id="card-pilih-tipe">
+    <div id="ruang" data-aos="fade-up-right" data-aos-duration="1200">
+      <h3>Bangun Ruang</h3>
+      <img src="asset/bangun-ruang.jpg" alt="bangun-ruang">
+      <br>
+      <button onclick="pilih('ruang')">Hitung!</button>
+    </div>
+    <div id="datar" data-aos="fade-up-left" data-aos-duration="1200">
+      <h3>Bangun Datar</h3>
+      <img src="asset/bangun-datar.jpg" alt="bangun-datar">
+      <br>
+      <button onclick="pilih('datar')">Hitung!</button>
+    </div>
+  </div>
+  <div id="menu">
+      <!-- Menu Bangun Ruang -->
+  <div id="menu-ruang" style="display: none;">
+    <div id="kubus">
+      <h4>Kubus</h4>
+      <img src="kubus.jpg" alt="kubus">
+      <button onclick="kubus('volume')">Hitung Volume</button>
+      <button onclick="kubus('luas_permukaan')">Hitung Luas Permukaan</button>
+    </div>
+    <div id="balok">
+        <h4>Balok</h4>
+        <img src="balok.jpg" alt="balok">
+        <button onclick="balok('volume')">Hitung Volume</button>
+        <button onclick="balok('luas_permukaan')">Hitung Luas Permukaan</button>
+    </div>
+    <div id="n"></div>
+  </div>
+
+  <!-- Menu Bangun Datar -->
+  <div id="menu-datar" style="display: none;">
+    <div id="persegi">
+      <h4>Persegi</h4>
+      <img src="persegi.jpg" alt="persegi">
+      <button onclick="kubus('luas')">Hitung Luas</button>
+      <button onclick="kubus('sisi')">Hitung Sisi</button>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Tempat Hitung -->
+  <div id="table-hitung">
+    <!-- volume kubus -->
+    <div id="table-volume-kubus" style="display:none;">
+      <h4>Hitung Volume Kubus</h4>
+      <input type="number" id="sisi" placeholder="Masukkan panjang sisi">
+      <select id="satuan">
+        <option value="cm3">cm³ (centimeter kubik)</option>
+        <option value="m3">m³ (meter kubik)</option>
+      </select>
+      <button onclick="hitungkubus('volume')">Hitung</button>
+      <p id="volume-kubus" style="display: none;"></p>
+    </div>
+    <!-- luas permukaan kubus -->
+     <div id="table-luas-kubus" style="display:none;">
+      <h4>Hitung Luas Permukaan Kubus</h4>
+      <input type="number" id="sisi-luas" placeholder="Masukkan panjang sisi">
+      <select id="satuan-luas">
+        <option value="cm2">cm² (centimeter persegi)</option>
+        <option value="m2">m² (meter persegi)</option>
+      </select>
+      <button onclick="hitungkubus('luas_permukaan')">Hitung</button>
+      <p id="luas-kubus" style="display: none;"></p>
+    </div>
+    <!-- volume balok -->
+    <div id="table-volume-balok" style="display:none;">
+      <h4>Hitung Volume Balok</h4>
+      <input type="number" id="panjang" placeholder="Masukkan panjang">
+      <input type="number" id="lebar" placeholder="Masukkan lebar">
+      <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+      <select id="satuan-balok">
+        <option value="cm3">cm³ (centimeter kubik)</option>
+        <option value="m3">m³ (meter kubik)</option>
+      </select>
+      <button onclick="hitungBalok('volume')">Hitung</button>
+      <p id="volume-balok" style="display: none;"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
