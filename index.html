@@ -84,7 +84,10 @@
       <button onclick="persegi('luas')">Hitung Luas</button>
       <button onclick="persegi('keliling')">Hitung Keliling</button>
     </div>
-    
+    <div>
+        <h4>Persegi Panjang</h4>
+        <button onclick="persegiPanjang()">Hitung!</button>
+      </div>
   </div>
   </div>
 
@@ -165,7 +168,19 @@
       <button onclick="hitungPersegi('keliling')">Hitung!</button>
       <p id="hasil-keliling-persegi" style="display: none;"></p>
     </div>
-   
+   <!-- Persegi Panjang -->
+    <div id="table-persegi-panjang" style="display:none;">
+      <h4>Persegi Panjang</h4>
+      <input type="number" id="panjang-pp" placeholder="Panjang">
+      <input type="number" id="lebar-pp" placeholder="Lebar">
+      <select id="satuan-pp">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungPP('luas')">Hitung Luas</button>
+      <button onclick="hitungPP('keliling')">Hitung Keliling</button>
+      <p id="hasil-pp"></p>
+    </div>
     </div>
   </div>
 
@@ -176,5 +191,6 @@
   </script>
 </body>
 </html>
+
 
 
