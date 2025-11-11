@@ -164,29 +164,7 @@ function hitungPersegi(jenis) {
       <p><strong>Keliling Persegi:</strong> ${hasil.toLocaleString()} ${satuan}</p>
     `;
   }
-  // === PERSEGI PANJANG ===
-function persegiPanjang() {
-  sembunyikanSemuaTabel();
-  document.getElementById("table-persegi-panjang").style.display = "block";
+
 }
 
-function hitungPP(jenis) {
-  const panjang = parseFloat(document.getElementById("panjang-pp").value);
-  const lebar = parseFloat(document.getElementById("lebar-pp").value);
-  const satuan = document.getElementById("satuan-pp").value;
-  const hasil = document.getElementById("hasil-pp");
-
-  if (isNaN(panjang) || isNaN(lebar)) {
-    alert("Masukkan panjang dan lebar dengan benar!");
-    return;
-  }
-
-  if (jenis === "luas") {
-    const luas = panjang * lebar;
-    hasil.innerText = `Luas = ${luas} ${satuan}²`;
-  } else {
-    const keliling = 2 * (panjang + lebar);
-    hasil.innerText = `Keliling = ${keliling} ${satuan}`;
-  }
-}
 
