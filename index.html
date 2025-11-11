@@ -113,19 +113,59 @@
       <p id="luas-kubus" style="display: none;"></p>
     </div>
     <!-- volume balok -->
-    <div id="table-volume-balok" style="display:none;">
-      <h4>Hitung Volume Balok</h4>
-      <input type="number" id="panjang" placeholder="Masukkan panjang">
-      <input type="number" id="lebar" placeholder="Masukkan lebar">
-      <input type="number" id="tinggi" placeholder="Masukkan tinggi">
-      <select id="satuan-balok">
-        <option value="cm3">cm³ (centimeter kubik)</option>
-        <option value="m3">m³ (meter kubik)</option>
+<div id="table-volume-balok" style="display:none;">
+  <h4>Hitung Volume Balok</h4>
+  <input type="number" id="panjang" placeholder="Masukkan panjang">
+  <input type="number" id="lebar" placeholder="Masukkan lebar">
+  <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+  <select id="satuan-balok">
+    <option value="cm3">cm³</option>
+    <option value="m3">m³</option>
+  </select>
+  <button onclick="hitungBalok('volume')">Hitung Volume</button>
+  <div id="volume-balok" style="display:none;"></div>
+</div>
+
+<!-- luas permukaan balok -->
+<div id="table-luas-balok" style="display:none;">
+  <h4>Hitung Luas Permukaan Balok</h4>
+  <input type="number" id="panjang-luas" placeholder="Masukkan panjang">
+  <input type="number" id="lebar-luas" placeholder="Masukkan lebar">
+  <input type="number" id="tinggi-luas" placeholder="Masukkan tinggi">
+  <select id="satuan-luas-balok">
+    <option value="cm²">cm²</option>
+    <option value="m²">m²</option>
+  </select>
+  <button onclick="hitungBalok('luas_permukaan')">Hitung Luas Permukaan</button>
+  <div id="luas-balok" style="display:none;"></div>
+</div>
+
+
+    <!-- persegi -->
+     <!-- luas persegi -->
+    <div id="table-luas-persegi" style="display: none;">
+      <h4>Hitung luas persegi</h4>
+      <input type="number" id="sisi-persegi-luas" placeholder="Masukan sisi">
+      <select id="satuan-persegi">
+        <option value="cm2">cm2</option>
+        <option value="m2">m2</option>
       </select>
-      <button onclick="hitungBalok('volume')">Hitung</button>
-      <p id="volume-balok" style="display: none;"></p>
+      <button onclick="hitungPersegi('luas')">Hitung!</button>
+      <p id="hasil-luas-persegi" style="display: none;"></p>
+    </div>
+    <!-- keliling persegi -->
+        <div id="table-keliling-persegi" style="display: none;">
+      <h4>Hitung Keliling persegi</h4>
+      <input type="number" id="sisi-persegi" placeholder="Masukan sisi">
+      <select id="satuan-persegi">
+        <option value="cm2">cm2</option>
+        <option value="m2">m2</option>
+      </select>
+      <button onclick="hitungPersegi('keliling')">Hitung!</button>
+      <p id="hasil-keliling-persegi" style="display: none;"></p>
     </div>
   </div>
+
 
   <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -134,5 +174,6 @@
   </script>
 </body>
 </html>
+
 
 
