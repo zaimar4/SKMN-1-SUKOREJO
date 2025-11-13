@@ -266,44 +266,184 @@ width: 180px;
   box-shadow: 2px 3px 10px gray;
   transform: translateY(-5px);
 }
-#menu{
+/* ========================= */
+/* MENU BANGUN RUANG & DATAR */
+/* ========================= */
+
+#menu-ruang,
+#menu-datar {
+  display: flex;
   justify-content: center;
-  justify-self: center;
-  align-items: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #cce7ff, #e3f2ff);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+/* Tiap Card Bangun */
+#menu-ruang > div,
+#menu-datar > div {
+  background: linear-gradient(145deg, #ffffff, #d6ebff);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2);
   text-align: center;
-  display:flex;
-  padding: 10px;
-  margin: 10px;
-} 
-#menu #kubus{
-  border: none;
-  justify-content: center;
-  padding: 5px;
-  width:200px ;
-   background: linear-gradient(145deg, #ffffff, #d6ebff); 
-  border-radius: 7px;  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2);
-  box-shadow: 2px 2px 5px rgb(113, 113, 113);
+  padding: 20px;
+  width: 230px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 123, 255, 0.2);
 }
-#menu img{
-  width:200px;
-  object-fit: cover;
+
+/* Hover efek */
+#menu-ruang > div:hover,
+#menu-datar > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.35);
 }
-#menu button{
-  padding: 5px 10px;
-  margin: 5px;
-  border: none;
-  border-radius: 7px;
+
+/* Gambar bangun */
+#menu-ruang img,
+#menu-datar img {
+  width: 100px;
+  height:100px;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+/* Judul bangun */
+#menu-ruang h4,
+#menu-datar h4 {
+  color: #004b91;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Tombol */
+#menu-ruang button,
+#menu-datar button {
+  background-color: #007bff;
   color: white;
-  background-color: #0097e6;
-  box-shadow:  2px 2px 5px rgb(113, 113, 113);
-}
-#menu button:hover{
-  box-shadow: 2px 3px 10px gray;
-  transform: translateY(-5px);
-}
-#menu h4{
-  color: #0059b3;
-  margin-top: 5px;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+  transition: all 0.3s ease;
 }
 
+#menu-ruang button:hover,
+#menu-datar button:hover {
+  background-color: #0059b3;
+  transform: scale(1.05);
+}
 
+/* Responsif */
+@media (max-width: 768px) {
+  #menu-ruang,
+  #menu-datar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu-ruang > div,
+  #menu-datar > div {
+    width: 90%;
+  }
+}
+
+/* =========================
+   STYLING TABLE HITUNG
+   ========================= */
+#table-hitung {
+  background: linear-gradient(135deg, #cce7ff, #e3f2ff); /* gradasi biru muda */
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25);
+  text-align: center;
+}
+
+/* Judul bagian hitung */
+#table-hitung h4 {
+  font-size: 22px;
+  color: #004b91;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Input dan select */
+#table-hitung input,
+#table-hitung select {
+  width: 70%;
+  max-width: 300px;
+  padding: 10px 12px;
+  margin: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 123, 255, 0.4);
+  background: #fff;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 15px;
+  color: #004b91;
+  transition: all 0.2s ease;
+}
+
+#table-hitung input:focus,
+#table-hitung select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+/* Tombol hitung */
+#table-hitung button {
+  background-color: #004b91;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0,123,255,0.3);
+}
+
+#table-hitung button:hover {
+  background-color: #007bff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,123,255,0.4);
+}
+
+/* Hasil perhitungan */
+#table-hitung p,
+#table-hitung div {
+  margin-top: 15px;
+  font-size: 17px;
+  color: #003366;
+  font-weight: bold;
+  background: linear-gradient(145deg, #ffffff, #d6ebff);
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  #table-hitung {
+    width: 95%;
+    padding: 40px 20px;
+  }
+  
+  #table-hitung input,
+  #table-hitung select {
+    width: 90%;
+  }
+}
