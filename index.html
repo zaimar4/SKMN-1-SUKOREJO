@@ -1,196 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
-  <title>Kalkulator Bangun Ruang</title>
+ <link rel="stylesheet" href="style.css">
+ <title>Kalkulator Bangun Ruang</title>
 </head>
 
 <body>
-    <nav data-aos="fade-up" data-aos-duration=""="0990">
-        <ul class="menu" >
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#card-pilih-tipe">Hitung</a></li>
-        </ul>
-    </nav>
+  <nav data-aos="fade-up" data-aos-duration="990">
+    <ul class="menu" >
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#card-pilih-tipe">Hitung</a></li>
+    </ul>
+  </nav>
 
-    <div id="hero" data-aos="fade-up" data-aos-duration="1500"  >
-      <h1 data-aos="fade-up" data-aos-duration="1000">Bangun Ruang & Bangun Datar <span data-aos="fade-up" data-aos-duration="1000">Kalkulator</span></h1>
-      <p data-aos="fade-up" data-aos-duration="1500">Hitung mudah di mana saja</p>
-    </div>
-   <div id="about">
-    <div id="card-about-1"  data-aos="zoom-in-up">
-      
-      <h4>Tujuan <i class="fa-solid fa-bullseye"></i></h4>
-      <p>Website ini dibuat untuk membantu pengguna menghitung bangun ruang dan bangun datar dengan mudah dan cepat tanpa perlu menghitung manual.</p>
-    </div>
-    <div id="card-about-2"  data-aos="zoom-in-up">
-   
-      <h4>Fitur Utama  <i class="fa-solid fa-gears"></i></h4>
-      <p>Dilengkapi kalkulator interaktif untuk menghitung volume, luas permukaan, dan sisi berbagai bangun. Hasil langsung tampil tanpa rumus manual.</p>
-    </div>
-      <div id="card-about-3" data-aos="zoom-in-up">
-      <h4>Teknologi  <i class="fa-solid fa-laptop-code"></i></h4>
-      <p>Dibangun menggunakan HTML, CSS, JavaScript, dan AOS Animation untuk tampilan yang menarik dan responsif di semua perangkat.</p>
-    </div>
-    <div id="card-about-4"  data-aos="zoom-in-up">
-      <h4>Tentang Pembuat <i class="fa-solid fa-user-graduate"></i></h4>
-      <p>Dikembangkan oleh <b>Zaim Arif</b>, siswa kelas X RPL 1, sebagai proyek pembelajaran dalam pengembangan website interaktif berbasis edukasi.</p>
-    </div>
-   </div>
-
-  <div id="card-pilih-tipe">
-    <div id="ruang" data-aos="fade-up-right" data-aos-duration="1200">
-      <h3>Bangun Ruang</h3>
-      <img src="asset/bangun-ruang.jpg" alt="bangun-ruang">
-      <br>
-      <button onclick="pilih('ruang');document.getElementById('menu-ruang').scrollIntoView({behavior: 'smooth'});">Hitung!</button>
-    </div>
-    <div id="datar" data-aos="fade-up-left" data-aos-duration="1200">
-      <h3>Bangun Datar</h3>
-      <img src="asset/bangun-datar.jpg" alt="bangun-datar">
-      <br>
-      <button onclick="pilih('datar');document.getElementById('menu-datar').scrollIntoView({behavior: 'smooth'});">Hitung!</button> 
-    </div>
+  <div id="hero" data-aos="fade-up" data-aos-duration="1500" >
+   <h1 data-aos="fade-up" data-aos-duration="1000">Bangun Ruang & Bangun Datar <span data-aos="fade-up" data-aos-duration="1000">Kalkulator</span></h1>
+   <p data-aos="fade-up" data-aos-duration="1500">Hitung mudah di mana saja</p>
   </div>
-  <div id="menu">
-      <!-- Menu Bangun Ruang -->
-  <div id="menu-ruang" style="display: none;">
-    <div id="kubus">
-      <h4>Kubus</h4>
-      <img src="asset/kubus.png" alt="kubus">
-      <button onclick="kubus('volume')">Hitung Volume</button>
-      <button onclick="kubus('luas_permukaan')">Hitung Luas Permukaan</button>
-    </div>
-    <div id="balok">
-        <h4>Balok</h4>
-        <img src="balok.jpg" alt="balok">
-        <button onclick="balok('volume')">Hitung Volume</button>
-        <button onclick="balok('luas_permukaan')">Hitung Luas Permukaan</button>
-    </div>
-    <div id="n"></div>
+ <div id="about">
+  <div id="card-about-1" data-aos="zoom-in-up">
+  
+   <h4>Tujuan <i class="fa-solid fa-bullseye"></i></h4>
+   <p>Website ini dibuat untuk membantu pengguna menghitung bangun ruang dan bangun datar dengan mudah dan cepat tanpa perlu menghitung manual.</p>
   </div>
-
-  <!-- Menu Bangun Datar -->
-  <div id="menu-datar" style="display: none;">
-    <div id="persegi">
-      <h4>Persegi</h4>
-      <img src="persegi.jpg" alt="persegi">
-      <button onclick="persegi('luas')">Hitung Luas</button>
-      <button onclick="persegi('keliling')">Hitung Keliling</button>
-    </div>
-    <div>
-        <h4>Persegi Panjang</h4>
-        <button onclick="persegiPanjang()">Hitung!</button>
-      </div>
+  <div id="card-about-2" data-aos="zoom-in-up">
+ 
+   <h4>Fitur Utama <i class="fa-solid fa-gears"></i></h4>
+   <p>Dilengkapi kalkulator interaktif untuk menghitung volume, luas permukaan, dan sisi berbagai bangun. Hasil langsung tampil tanpa rumus manual.</p>
   </div>
+   <div id="card-about-3" data-aos="zoom-in-up">
+   <h4>Teknologi <i class="fa-solid fa-laptop-code"></i></h4>
+   <p>Dibangun menggunakan HTML, CSS, JavaScript, dan AOS Animation untuk tampilan yang menarik dan responsif di semua perangkat.</p>
   </div>
+  <div id="card-about-4" data-aos="zoom-in-up">
+   <h4>Tentang Pembuat <i class="fa-solid fa-user-graduate"></i></h4>
+   <p>Dikembangkan oleh <b>Ahmad Zaim Arif</b> & <b>M Aziel Akbar S</b>, siswa SMKN 1 SUKOREJO, sebagai proyek pembelajaran dalam pengembangan website interaktif berbasis edukasi.</p>
+  </div>
+ </div>
+
+ <div id="card-pilih-tipe">
+  <div id="ruang" data-aos="fade-up-right" data-aos-duration="1200">
+   <h3>Bangun Ruang</h3>
+   <img src="asset/bangun-ruang.jpg" alt="bangun-ruang">
+   <br>
+   <button onclick="pilih('ruang');document.getElementById('menu-ruang').scrollIntoView({behavior: 'smooth'});">Hitung!</button>
+  </div>
+  <div id="datar" data-aos="fade-up-left" data-aos-duration="1200">
+   <h3>Bangun Datar</h3>
+   <img src="asset/bangun-datar.jpg" alt="bangun-datar">
+   <br>
+   <button onclick="pilih('datar');document.getElementById('menu-datar').scrollIntoView({behavior: 'smooth'});">Hitung!</button>
+  </div>
+ </div>
+ <div id="menu">
+   <div id="menu-ruang" style="display:none;">
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Kubus</h4>
+  <img src="asset/kubus.png" alt="kubus">
+  <button onclick="kubus('volume')">Hitung Volume</button>
+  <button onclick="kubus('luas_permukaan')">Hitung Luas Permukaan</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Balok</h4>
+  <img src="asset/balok.png" alt="balok">
+  <button onclick="balok('volume')">Hitung Volume</button>
+  <button onclick="balok('luas_permukaan')">Hitung Luas Permukaan</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Prisma Segitiga</h4>
+  <img src="asset/prisma.png" alt="prisma">
+  <button onclick="prisma('volume')">Hitung Volume</button>
+  <button onclick="prisma('luas')">Hitung Luas Permukaan</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Limas Segiempat</h4>
+  <img src="asset/limas.png" alt="limas">
+  <button onclick="limas('volume')">Hitung Volume</button>
+  <button onclick="limas('luas')">Hitung Luas Permukaan</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Tabung</h4>
+  <img src="asset/tabung.png" alt="tabung">
+  <button onclick="tabung('volume')">Hitung Volume</button>
+  <button onclick="tabung('luas')">Hitung Luas Permukaan</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Kerucut</h4>
+  <img src="asset/kerucut.png" alt="kerucut">
+  <button onclick="kerucut('volume')">Hitung Volume</button>
+  <button onclick="kerucut('luas')">Hitung Luas Permukaan</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Bola</h4>
+  <img src="asset/bola.png" alt="bola">
+  <button onclick="bola('volume')">Hitung Volume</button>
+  <button onclick="bola('luas')">Hitung Luas Permukaan</button>
+ </div>
+</div>
 
 
-  <!-- Tempat Hitung -->
+
+<div id="menu-datar" style="display:none;">
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Persegi</h4>
+  <img src="asset/persegi.png" alt="persegi">
+  <button onclick="persegi('luas')">Hitung Luas</button>
+  <button onclick="persegi('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Persegi Panjang</h4>
+  <img src="asset/persegi-panjang.png" alt="persegi panjang">
+  <button onclick="ppanjang('luas')">Hitung Luas</button>
+  <button onclick="ppanjang('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Segitiga</h4>
+  <img src="asset/segitiga.png" alt="segitiga">
+  <button onclick="segitiga('luas')">Hitung Luas</button>
+  <button onclick="segitiga('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Jajar Genjang</h4>
+  <img src="asset/jajar-genjang.png" alt="jajar genjang">
+  <button onclick="jajargenjang('luas')">Hitung Luas</button>
+  <button onclick="jajargenjang('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Trapesium</h4>
+  <img src="asset/trapesium.png" alt="trapesium">
+  <button onclick="trapesium('luas')">Hitung Luas</button>
+  <button onclick="trapesium('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Belah Ketupat</h4>
+  <img src="asset/belah-ketupat.png" alt="belah ketupat">
+  <button onclick="belahketupat('luas')">Hitung Luas</button>
+  <button onclick="belahketupat('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Layang-Layang</h4>
+  <img src="asset/layang-layang.png" alt="layang-layang">
+  <button onclick="layang('luas')">Hitung Luas</button>
+  <button onclick="layang('keliling')">Hitung Keliling</button>
+ </div>
+
+ <div class="card-bangun" data-aos="zoom-in">
+  <h4>Lingkaran</h4>
+  <img src="asset/lingkaran.png" alt="lingkaran">
+  <button onclick="lingkaran('luas')">Hitung Luas</button>
+  <button onclick="lingkaran('keliling')">Hitung Keliling</button>
+ </div>
+</div>
+
+
+  </div>
+ 
+
+
   <div id="table-hitung">
-    <!-- volume kubus -->
-    <div id="table-volume-kubus" style="display:none;">
-      <h4>Hitung Volume Kubus</h4>
-      <input type="number" id="sisi" placeholder="Masukkan panjang sisi">
-      <select id="satuan">
-        <option value="cm3">cm³ (centimeter kubik)</option>
-        <option value="m3">m³ (meter kubik)</option>
+  
+      <div id="table-volume-kubus" style="display:none;">
+   <h4>Hitung Volume Kubus</h4>
+   <input type="number" id="sisi-volume-kubus" placeholder="Masukkan panjang sisi">
+   <select id="satuan-volume-kubus">
+    <option value="cm³">cm³ (centimeter kubik)</option>
+    <option value="m³">m³ (meter kubik)</option>
+   </select>
+   <button onclick="hitungKubus('volume')">Hitung</button>
+   <p id="hasil-volume-kubus" style="display: none;"></p>
+  </div>
+  
+      <div id="table-luas-kubus" style="display:none;">
+   <h4>Hitung Luas Permukaan Kubus</h4>
+   <input type="number" id="sisi-luas-kubus" placeholder="Masukkan panjang sisi">
+   <select id="satuan-luas-kubus">
+    <option value="cm²">cm² (centimeter persegi)</option>
+    <option value="m²">m² (meter persegi)</option>
+   </select>
+   <button onclick="hitungKubus('luas_permukaan')">Hitung</button>
+   <p id="hasil-luas-kubus" style="display: none;"></p>
+  </div>
+
+  <div id="table-volume-balok" style="display:none;">
+      <h4>Hitung Volume Balok</h4>
+      <input type="number" id="p-volume-balok" placeholder="Masukkan panjang">
+      <input type="number" id="l-volume-balok" placeholder="Masukkan lebar">
+      <input type="number" id="t-volume-balok" placeholder="Masukkan tinggi">
+      <select id="satuan-volume-balok">
+        <option value="cm³">cm³</option>
+        <option value="m³">m³</option>
       </select>
-      <button onclick="hitungkubus('volume')">Hitung</button>
-      <p id="volume-kubus" style="display: none;"></p>
+      <button onclick="hitungBalok('volume')">Hitung Volume</button>
+      <p id="hasil-volume-balok" style="display:none;"></p>
     </div>
-    <!-- luas permukaan kubus -->
-     <div id="table-luas-kubus" style="display:none;">
-      <h4>Hitung Luas Permukaan Kubus</h4>
-      <input type="number" id="sisi-luas" placeholder="Masukkan panjang sisi">
-      <select id="satuan-luas">
-        <option value="cm2">cm² (centimeter persegi)</option>
-        <option value="m2">m² (meter persegi)</option>
+
+    <div id="table-luas-balok" style="display:none;">
+      <h4>Hitung Luas Permukaan Balok</h4>
+      <input type="number" id="p-luas-balok" placeholder="Masukkan panjang">
+      <input type="number" id="l-luas-balok" placeholder="Masukkan lebar">
+      <input type="number" id="t-luas-balok" placeholder="Masukkan tinggi">
+      <select id="satuan-luas-balok">
+        <option value="cm²">cm²</option>
+        <option value="m²">m²</option>
       </select>
-      <button onclick="hitungkubus('luas_permukaan')">Hitung</button>
-      <p id="luas-kubus" style="display: none;"></p>
+      <button onclick="hitungBalok('luas_permukaan')">Hitung Luas Permukaan</button>
+      <p id="hasil-luas-balok" style="display:none;"></p>
     </div>
-  <!-- volume balok -->
-<div id="table-volume-balok" style="display:none;">
-  <h4>Hitung Volume Balok</h4>
-  <input type="number" id="panjang" placeholder="Masukkan panjang">
-  <input type="number" id="lebar" placeholder="Masukkan lebar">
-  <input type="number" id="tinggi" placeholder="Masukkan tinggi">
-  <select id="satuan-balok">
-    <option value="cm3">cm³</option>
-    <option value="m3">m³</option>
-  </select>
-  <button onclick="hitungBalok('volume')">Hitung Volume</button>
-  <div id="volume-balok" style="display:none;"></div>
-</div>
 
-<!-- luas permukaan balok -->
-<div id="table-luas-balok" style="display:none;">
-  <h4>Hitung Luas Permukaan Balok</h4>
-  <input type="number" id="panjang-luas" placeholder="Masukkan panjang">
-  <input type="number" id="lebar-luas" placeholder="Masukkan lebar">
-  <input type="number" id="tinggi-luas" placeholder="Masukkan tinggi">
-  <select id="satuan-luas-balok">
-    <option value="cm²">cm²</option>
-    <option value="m²">m²</option>
-  </select>
-  <button onclick="hitungBalok('luas_permukaan')">Hitung Luas Permukaan</button>
-  <div id="luas-balok" style="display:none;"></div>
-</div>
+    <div id="table-volume-prisma" style="display:none;">
+      <h4>Hitung Volume Prisma Segitiga</h4>
+      <input type="number" id="luas-alas-prisma" placeholder="Masukkan Luas Alas Segitiga">
+      <input type="number" id="tinggi-prisma" placeholder="Masukkan Tinggi Prisma">
+      <select id="satuan-volume-prisma">
+        <option value="cm³">cm³</option>
+        <option value="m³">m³</option>
+      </select>
+      <button onclick="hitungPrisma('volume')">Hitung Volume</button>
+      <p id="hasil-volume-prisma" style="display:none;"></p>
+    </div>
+    
+    <div id="table-luas-prisma" style="display:none;">
+      <h4>Hitung Luas Permukaan Prisma Segitiga</h4>
+      <input type="number" id="luas-alas-prisma-luas" placeholder="Masukkan Luas Alas Segitiga">
+      <input type="number" id="keliling-alas-prisma-luas" placeholder="Masukkan Keliling Alas Segitiga">
+      <input type="number" id="tinggi-prisma-luas" placeholder="Masukkan Tinggi Prisma">
+      <select id="satuan-luas-prisma">
+        <option value="cm²">cm²</option>
+        <option value="m²">m²</option>
+      </select>
+      <button onclick="hitungPrisma('luas')">Hitung Luas Permukaan</button>
+      <p id="hasil-luas-prisma" style="display:none;"></p>
+    </div>
+
+    <div id="table-volume-limas" style="display:none;">
+      <h4>Hitung Volume Limas Segiempat</h4>
+      <input type="number" id="luas-alas-limas" placeholder="Masukkan Luas Alas">
+      <input type="number" id="tinggi-limas" placeholder="Masukkan Tinggi Limas">
+      <select id="satuan-volume-limas">
+        <option value="cm³">cm³</option>
+        <option value="m³">m³</option>
+      </select>
+      <button onclick="hitungLimas('volume')">Hitung Volume</button>
+      <p id="hasil-volume-limas" style="display:none;"></p>
+    </div>
+    
+    <div id="table-luas-limas" style="display:none;">
+      <h4>Hitung Luas Permukaan Limas Segiempat</h4>
+      <input type="number" id="luas-alas-limas-luas" placeholder="Masukkan Luas Alas">
+      <input type="number" id="luas-sisi-tegak-limas" placeholder="Masukkan Jumlah Luas Sisi Tegak">
+      <select id="satuan-luas-limas">
+        <option value="cm²">cm²</option>
+        <option value="m²">m²</option>
+      </select>
+      <button onclick="hitungLimas('luas')">Hitung Luas Permukaan</button>
+      <p id="hasil-luas-limas" style="display:none;"></p>
+    </div>
+
+    <div id="table-volume-tabung" style="display:none;">
+      <h4>Hitung Volume Tabung</h4>
+      <input type="number" id="r-volume-tabung" placeholder="Masukkan Jari-jari (r)">
+      <input type="number" id="t-volume-tabung" placeholder="Masukkan Tinggi (t)">
+      <select id="satuan-volume-tabung">
+        <option value="cm³">cm³</option>
+        <option value="m³">m³</option>
+      </select>
+      <button onclick="hitungTabung('volume')">Hitung Volume</button>
+      <p id="hasil-volume-tabung" style="display:none;"></p>
+    </div>
+    
+    <div id="table-luas-tabung" style="display:none;">
+      <h4>Hitung Luas Permukaan Tabung</h4>
+      <input type="number" id="r-luas-tabung" placeholder="Masukkan Jari-jari (r)">
+      <input type="number" id="t-luas-tabung" placeholder="Masukkan Tinggi (t)">
+      <select id="satuan-luas-tabung">
+        <option value="cm²">cm²</option>
+        <option value="m²">m²</option>
+      </select>
+      <button onclick="hitungTabung('luas')">Hitung Luas Permukaan</button>
+      <p id="hasil-luas-tabung" style="display:none;"></p>
+    </div>
+    
+    <div id="table-volume-kerucut" style="display:none;">
+      <h4>Hitung Volume Kerucut</h4>
+      <input type="number" id="r-volume-kerucut" placeholder="Masukkan Jari-jari (r)">
+      <input type="number" id="t-volume-kerucut" placeholder="Masukkan Tinggi (t)">
+      <select id="satuan-volume-kerucut">
+        <option value="cm³">cm³</option>
+        <option value="m³">m³</option>
+      </select>
+      <button onclick="hitungKerucut('volume')">Hitung Volume</button>
+      <p id="hasil-volume-kerucut" style="display:none;"></p>
+    </div>
+    
+    <div id="table-luas-kerucut" style="display:none;">
+      <h4>Hitung Luas Permukaan Kerucut</h4>
+      <input type="number" id="r-luas-kerucut" placeholder="Masukkan Jari-jari (r)">
+      <input type="number" id="s-luas-kerucut" placeholder="Masukkan Garis Pelukis (s)">
+      <select id="satuan-luas-kerucut">
+        <option value="cm²">cm²</option>
+        <option value="m²">m²</option>
+      </select>
+      <button onclick="hitungKerucut('luas')">Hitung Luas Permukaan</button>
+      <p id="hasil-luas-kerucut" style="display:none;"></p>
+    </div>
+    
+    <div id="table-volume-bola" style="display:none;">
+      <h4>Hitung Volume Bola</h4>
+      <input type="number" id="r-volume-bola" placeholder="Masukkan Jari-jari (r)">
+      <select id="satuan-volume-bola">
+        <option value="cm³">cm³</option>
+        <option value="m³">m³</option>
+      </select>
+      <button onclick="hitungBola('volume')">Hitung Volume</button>
+      <p id="hasil-volume-bola" style="display:none;"></p>
+    </div>
+    
+    <div id="table-luas-bola" style="display:none;">
+      <h4>Hitung Luas Permukaan Bola</h4>
+      <input type="number" id="r-luas-bola" placeholder="Masukkan Jari-jari (r)">
+      <select id="satuan-luas-bola">
+        <option value="cm²">cm²</option>
+        <option value="m²">m²</option>
+      </select>
+      <button onclick="hitungBola('luas')">Hitung Luas Permukaan</button>
+      <p id="hasil-luas-bola" style="display:none;"></p>
+    </div>
 
 
-    <!-- persegi -->
-     <!-- luas persegi -->
     <div id="table-luas-persegi" style="display: none;">
-      <h4>Hitung luas persegi</h4>
-      <input type="number" id="sisi-persegi-luas" placeholder="Masukan sisi">
-      <select id="satuan-persegi">
-        <option value="cm2">cm2</option>
-        <option value="m2">m2</option>
-      </select>
-      <button onclick="hitungPersegi('luas')">Hitung!</button>
-      <p id="hasil-luas-persegi" style="display: none;"></p>
-    </div>
-    <!-- keliling persegi -->
-        <div id="table-keliling-persegi" style="display: none;">
-      <h4>Hitung Keliling persegi</h4>
-      <input type="number" id="sisi-persegi" placeholder="Masukan sisi">
-      <select id="satuan-persegi">
-        <option value="cm2">cm2</option>
-        <option value="m2">m2</option>
-      </select>
-      <button onclick="hitungPersegi('keliling')">Hitung!</button>
-      <p id="hasil-keliling-persegi" style="display: none;"></p>
-    </div>
-   <!-- Persegi Panjang -->
-    <div id="table-persegi-panjang" style="display:none;">
-      <h4>Persegi Panjang</h4>
-      <input type="number" id="panjang-pp" placeholder="Panjang">
-      <input type="number" id="lebar-pp" placeholder="Lebar">
-      <select id="satuan-pp">
+   <h4>Hitung Luas Persegi</h4>
+   <input type="number" id="sisi-luas-persegi" placeholder="Masukan sisi">
+   <select id="satuan-luas-persegi">
+    <option value="cm">cm</option>
+    <option value="m">m</option>
+   </select>
+   <button onclick="hitungPersegi('luas')">Hitung!</button>
+   <p id="hasil-luas-persegi" style="display: none;"></p>
+  </div>
+    
+    <div id="table-keliling-persegi" style="display: none;">
+   <h4>Hitung Keliling Persegi</h4>
+   <input type="number" id="sisi-keliling-persegi" placeholder="Masukan sisi">
+   <select id="satuan-keliling-persegi">
+    <option value="cm">cm</option>
+    <option value="m">m</option>
+   </select>
+   <button onclick="hitungPersegi('keliling')">Hitung!</button>
+   <p id="hasil-keliling-persegi" style="display: none;"></p>
+  </div>
+
+    <div id="table-luas-ppanjang" style="display: none;">
+      <h4>Hitung Luas Persegi Panjang</h4>
+      <input type="number" id="p-luas-ppanjang" placeholder="Masukkan panjang">
+      <input type="number" id="l-luas-ppanjang" placeholder="Masukkan lebar">
+      <select id="satuan-luas-ppanjang">
         <option value="cm">cm</option>
         <option value="m">m</option>
       </select>
-      <button onclick="hitungPP('luas')">Hitung Luas</button>
-      <button onclick="hitungPP('keliling')">Hitung Keliling</button>
-      <p id="hasil-pp"></p>
+      <button onclick="hitungPpanjang('luas')">Hitung!</button>
+      <p id="hasil-luas-ppanjang" style="display: none;"></p>
     </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <div id="table-keliling-ppanjang" style="display: none;">
+      <h4>Hitung Keliling Persegi Panjang</h4>
+      <input type="number" id="p-keliling-ppanjang" placeholder="Masukkan panjang">
+      <input type="number" id="l-keliling-ppanjang" placeholder="Masukkan lebar">
+      <select id="satuan-keliling-ppanjang">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungPpanjang('keliling')">Hitung!</button>
+      <p id="hasil-keliling-ppanjang" style="display: none;"></p>
+    </div>
+
+    <div id="table-luas-segitiga" style="display: none;">
+      <h4>Hitung Luas Segitiga</h4>
+      <input type="number" id="a-luas-segitiga" placeholder="Masukkan alas">
+      <input type="number" id="t-luas-segitiga" placeholder="Masukkan tinggi">
+      <select id="satuan-luas-segitiga">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungSegitiga('luas')">Hitung!</button>
+      <p id="hasil-luas-segitiga" style="display: none;"></p>
+    </div>
+
+    <div id="table-keliling-segitiga" style="display: none;">
+      <h4>Hitung Keliling Segitiga</h4>
+      <input type="number" id="a-keliling-segitiga" placeholder="Masukkan sisi A">
+      <input type="number" id="b-keliling-segitiga" placeholder="Masukkan sisi B">
+      <input type="number" id="c-keliling-segitiga" placeholder="Masukkan sisi C">
+      <select id="satuan-keliling-segitiga">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungSegitiga('keliling')">Hitung!</button>
+      <p id="hasil-keliling-segitiga" style="display: none;"></p>
+    </div>
+
+    <div id="table-luas-jajargenjang" style="display: none;">
+      <h4>Hitung Luas Jajar Genjang</h4>
+      <input type="number" id="a-luas-jg" placeholder="Masukkan alas">
+      <input type="number" id="t-luas-jg" placeholder="Masukkan tinggi">
+      <select id="satuan-luas-jg">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungJajargenjang('luas')">Hitung!</button>
+      <p id="hasil-luas-jg" style="display: none;"></p>
+    </div>
+
+    <div id="table-keliling-jajargenjang" style="display: none;">
+      <h4>Hitung Keliling Jajar Genjang</h4>
+      <input type="number" id="a-keliling-jg" placeholder="Masukkan sisi alas">
+      <input type="number" id="b-keliling-jg" placeholder="Masukkan sisi miring">
+      <select id="satuan-keliling-jg">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungJajargenjang('keliling')">Hitung!</button>
+      <p id="hasil-keliling-jg" style="display: none;"></p>
+    </div>
+
+    <div id="table-luas-trapesium" style="display: none;">
+      <h4>Hitung Luas Trapesium</h4>
+      <input type="number" id="a-luas-trap" placeholder="Masukkan sisi atas (a)">
+      <input type="number" id="b-luas-trap" placeholder="Masukkan sisi bawah (b)">
+      <input type="number" id="t-luas-trap" placeholder="Masukkan tinggi (t)">
+      <select id="satuan-luas-trap">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungTrapesium('luas')">Hitung!</button>
+      <p id="hasil-luas-trap" style="display: none;"></p>
+    </div>
+
+    <div id="table-keliling-trapesium" style="display: none;">
+      <h4>Hitung Keliling Trapesium</h4>
+      <input type="number" id="a-keliling-trap" placeholder="Masukkan sisi a">
+      <input type="number" id="b-keliling-trap" placeholder="Masukkan sisi b">
+      <input type="number" id="c-keliling-trap" placeholder="Masukkan sisi c">
+      <input type="number" id="d-keliling-trap" placeholder="Masukkan sisi d">
+      <select id="satuan-keliling-trap">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungTrapesium('keliling')">Hitung!</button>
+      <p id="hasil-keliling-trap" style="display: none;"></p>
+    </div>
+
+    <div id="table-luas-bk" style="display: none;">
+      <h4>Hitung Luas Belah Ketupat</h4>
+      <input type="number" id="d1-luas-bk" placeholder="Masukkan Diagonal 1 (d1)">
+      <input type="number" id="d2-luas-bk" placeholder="Masukkan Diagonal 2 (d2)">
+      <select id="satuan-luas-bk">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungBelahKetupat('luas')">Hitung!</button>
+      <p id="hasil-luas-bk" style="display: none;"></p>
+    </div>
+
+    <div id="table-keliling-bk" style="display: none;">
+      <h4>Hitung Keliling Belah Ketupat</h4>
+      <input type="number" id="s-keliling-bk" placeholder="Masukkan sisi (s)">
+      <select id="satuan-keliling-bk">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungBelahKetupat('keliling')">Hitung!</button>
+      <p id="hasil-keliling-bk" style="display: none;"></p>
+    </div>
+
+    <div id="table-luas-layang" style="display: none;">
+      <h4>Hitung Luas Layang-Layang</h4>
+      <input type="number" id="d1-luas-layang" placeholder="Masukkan Diagonal 1 (d1)">
+      <input type="number" id="d2-luas-layang" placeholder="Masukkan Diagonal 2 (d2)">
+      <select id="satuan-luas-layang">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungLayang('luas')">Hitung!</button>
+      <p id="hasil-luas-layang" style="display: none;"></p>
+    </div>
+
+    <div id="table-keliling-layang" style="display: none;">
+      <h4>Hitung Keliling Layang-Layang</h4>
+      <input type="number" id="s1-keliling-layang" placeholder="Masukkan sisi pendek (s1)">
+      <input type="number" id="s2-keliling-layang" placeholder="Masukkan sisi panjang (s2)">
+      <select id="satuan-keliling-layang">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungLayang('keliling')">Hitung!</button>
+      <p id="hasil-keliling-layang" style="display: none;"></p>
+    </div>
+
+    <div id="table-luas-lingkaran" style="display: none;">
+      <h4>Hitung Luas Lingkaran</h4>
+      <input type="number" id="r-luas-lingkaran" placeholder="Masukkan Jari-jari (r)">
+      <select id="satuan-luas-lingkaran">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungLingkaran('luas')">Hitung!</button>
+      <p id="hasil-luas-lingkaran" style="display: none;"></p>
+    </div>
+
+    <div id="table-keliling-lingkaran" style="display: none;">
+      <h4>Hitung Keliling Lingkaran</h4>
+      <input type="number" id="r-keliling-lingkaran" placeholder="Masukkan Jari-jari (r)">
+      <select id="satuan-keliling-lingkaran">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <button onclick="hitungLingkaran('keliling')">Hitung!</button>
+      <p id="hasil-keliling-lingkaran" style="display: none;"></p>
+    </div>
+
+</div>
+
+ <script src="script.js"></script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+ AOS.init();
+ </script>
 </body>
 </html>
-
-
-
