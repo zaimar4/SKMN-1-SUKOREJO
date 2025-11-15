@@ -239,8 +239,8 @@ body{
   box-shadow: 4px 2px 20px rgb(92, 91, 91);
 }
 #datar img{
-width: 180px;
-  height: 150px;
+width: 200px;
+  height: 200px;
   justify-self: center;
   border-radius: 10px;
   object-fit: cover;
@@ -669,3 +669,4 @@ width: 180px;
                 padding: 15px 20px;
             }
         }
+
