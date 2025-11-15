@@ -447,144 +447,9 @@ width: 180px;
     width: 90%;
   }
 }
+
+
 /* ====== Kontak Section ====== */
-.kontak-section {
-  background-color: #dbeeff;
-  padding: 60px 20px;
-  text-align: center;
-  border-top: 3px solid #a7c8f0;
-}
-
-.kontak-section h2 {
-  color: #003366;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.kontak-section p {
-  color: #444;
-  font-size: 1rem;
-  margin-bottom: 30px;
-}
-
-.kontak-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.kontak-form {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 350px;
-}
-
-.kontak-form input,
-.kontak-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
-}
-
-.kontak-form button {
-  background-color: #004aad;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.kontak-form button:hover {
-  background-color: #003580;
-}
-
-.kontak-info {
-  text-align: left;
-  max-width: 300px;
-}
-
-.kontak-info h3 {
-  color: #004aad;
-  margin-bottom: 15px;
-}
-
-.kontak-info p {
-  color: #333;
-  margin: 8px 0;
-  font-size: 0.95rem;
-}
-
-.kontak-info i {
-  color: #004aad;
-  margin-right: 10px;
-}
-/* ====== Connect With Me (Mini Style) ====== */
-.connect-mini {
-  text-align: center;
-  padding: 40px 0 60px;
-  background-color: #e9f3ff;
-}
-
-.connect-mini h3 {
-  color: #004aad;
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.social-mini {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.social-mini a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 10px;
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.social-mini a:hover {
-  transform: translateY(-4px);
-  opacity: 0.9;
-}
-
-/* Platform colors */
-.social-mini .ig {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-}
-
-.social-mini .tiktok {
-  background-color: #000000;
-}
-
-.social-mini .yt {
-  background-color: #ff0000;
-}
-
-.social-mini i {
-  font-size: 1rem;
-}
-
-  /*ini bagian kontak*/
 }.container {
             max-width:1400px;
             margin: 0 auto;
@@ -809,4 +674,5 @@ width: 180px;
                 padding: 15px 20px;
             }
         }
+
 
